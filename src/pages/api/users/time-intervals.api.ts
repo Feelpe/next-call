@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { unstable_getServerSession } from 'next-auth'
-import { buildNextAuthOptions } from '../auth/[...nextauth].api'
 import { z } from 'zod'
 import { prisma } from '../../../lib/prisma'
+import { buildNextAuthOptions } from '../auth/[...nextauth].api'
 
 const timeIntervalsBodySchema = z.object({
   intervals: z.array(
@@ -19,7 +19,7 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   if (req.method !== 'POST') {
-    return res.status(405).end
+    return res.status(405).end()
   }
 
   const session = await unstable_getServerSession(
@@ -46,10 +46,6 @@ export default async function handler(
       })
     }),
   )
-
-  // TODO: use postgres to use createMany
-
-  // await prisma.userTimeInterval.createMany
 
   return res.status(201).end()
 }
