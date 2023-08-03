@@ -1,10 +1,10 @@
+import { useQuery } from '@tanstack/react-query'
+import dayjs from 'dayjs'
+import { useRouter } from 'next/router'
 import { CaretLeft, CaretRight } from 'phosphor-react'
 import { useMemo, useState } from 'react'
-import dayjs from 'dayjs'
-import { date } from 'zod'
-
+import { api } from '../../lib/axios'
 import { getWeekDays } from '../../utils/get-week-days'
-
 import {
   CalendarActions,
   CalendarBody,
@@ -12,11 +12,7 @@ import {
   CalendarDay,
   CalendarHeader,
   CalendarTitle,
-} from './styled'
-
-import { useQuery } from '@tanstack/react-query'
-import { api } from '../../lib/axios'
-import { useRouter } from 'next/router'
+} from './styles'
 
 interface CalendarWeek {
   week: number
@@ -34,7 +30,7 @@ interface BlockedDates {
 }
 
 interface CalendarProps {
-  selectedDate?: Date | null
+  selectedDate: Date | null
   onDateSelected: (date: Date) => void
 }
 
@@ -46,15 +42,15 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
   const router = useRouter()
 
   function handlePreviousMonth() {
-    const previousMounthDate = currentDate.subtract(1, 'month')
+    const previousMonth = currentDate.subtract(1, 'month')
 
-    setCurrentDate(previousMounthDate)
+    setCurrentDate(previousMonth)
   }
 
   function handleNextMonth() {
-    const previousMounthDate = currentDate.add(1, 'month')
+    const nextMonth = currentDate.add(1, 'month')
 
-    setCurrentDate(previousMounthDate)
+    setCurrentDate(nextMonth)
   }
 
   const shortWeekDays = getWeekDays({ short: true })
@@ -82,6 +78,7 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
     if (!blockedDates) {
       return []
     }
+    console.log('calendarWeeks ~ blockedDates', blockedDates)
 
     const daysInMonthArray = Array.from({
       length: currentDate.daysInMonth(),
@@ -103,7 +100,6 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
       'date',
       currentDate.daysInMonth(),
     )
-
     const lastWeekDay = lastDayInCurrentMonth.get('day')
 
     const nextMonthFillArray = Array.from({
