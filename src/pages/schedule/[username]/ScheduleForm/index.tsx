@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { CalendarStep } from './CalendarStep/index.page'
-import { ConfirmStep } from './ConfirmStep/index.page'
+import { CalendarStep } from './CalendarStep/index'
+import { ConfirmStep } from './ConfirmStep/index'
 
 export function ScheduleForm() {
   const [selectedDateTime, setSelectedDateTime] = useState<Date | null>()

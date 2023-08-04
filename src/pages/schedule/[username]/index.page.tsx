@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 
 import { prisma } from '../../../lib/prisma'
 
-import { ScheduleForm } from './ScheduleForm/index.page'
+import { ScheduleForm } from './ScheduleForm/index'
 import { Container, UserHeader } from './styles'
 import { NextSeo } from 'next-seo'
 
