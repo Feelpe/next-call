@@ -20,7 +20,7 @@ export default async function handler(
 
   if (userExists) {
     return res.status(400).json({
-      message: 'User already exists',
+      message: 'Username already taken.',
     })
   }
 
