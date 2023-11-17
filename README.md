@@ -1,6 +1,10 @@
+![next-schedule](https://i.imgur.com/A8MABz5.png)
+
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
+
 # Next Schedule
 
-This web application allows user to sign in using their Google Account and create meetings on Google Meet via the application calendar. Built with Typescript, React.js, Next.js, Prisma, Zod, Nookies, Axios, Dayjs and Eslint.
+This web application allows users to sign in using their Google Account and create meetings on Google Meet via the application calendar. Built with Typescript, React.js, Next.js, Prisma, Zod, Nookies, Axios, Dayjs and Eslint.
 
 ## Getting Started
 
@@ -26,11 +30,11 @@ npm install
 
 ## Configuring Google OAuth
 
-This application uses Google OAuth for authentication. Refer to the Google OAuth documentation on how to set it up, and afterwards, keep track of your Client ID and Client Secret.
+This application uses Google OAuth for authentication. Refer to the Google OAuth documentation on how to set it up, and afterward, keep track of your Client ID and Client Secret.
 
 ## Configuring Google Calendar
 
-The application integrates Google Calendar for scheduling meetings. Instructions on setting it up are available in the Google Calendar API documentation.
+The application integrates with Google Calendar for scheduling meetings. Instructions on setting it up are available in the Google Calendar API documentation.
 
 ## Environment Variables
 
